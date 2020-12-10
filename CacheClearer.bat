@@ -5,8 +5,8 @@ If /I "%Input%"=="y" goto normalyes
 goto normalno
 
 :normalyes
-del /s /q "C:\Users\metak\AppData\Local\Temp\*.*"
-for /d %%p in ("C:\Users\metak\AppData\Local\Temp\*.*") do rmdir "%%p" /s /q
+del /s /q "C:\Users\%username%\AppData\Local\Temp\*.*"
+for /d %%p in ("C:\Users\%username%\AppData\Local\Temp\*.*") do rmdir "%%p" /s /q
 
 del /s /q "C:\Windows\Temp\*.*"
 for /d %%p in ("C:\Windows\Temp\*.*") do rmdir "%%p" /s /q
@@ -78,13 +78,13 @@ If /I "%Input%"=="y" goto discordyes
 goto discordno
 
 :discordyes
-del /s /q "C:\Users\metak\AppData\Roaming\Discord\Cache\*.*"
-del /s /q "C:\Users\metak\AppData\Roaming\Discord\Code Cache\*.*"
-del /s /q "C:\Users\metak\AppData\Roaming\Discord\GPUCache\*.*"
+del /s /q "C:\Users\%username%\AppData\Roaming\Discord\Cache\*.*"
+del /s /q "C:\Users\%username%\AppData\Roaming\Discord\Code Cache\*.*"
+del /s /q "C:\Users\%username%\AppData\Roaming\Discord\GPUCache\*.*"
 
-for /d %%p in ("C:\Users\metak\AppData\Roaming\Discord\Cache\*.*") do rmdir "%%p" /s /q
-for /d %%p in ("C:\Users\metak\AppData\Roaming\Discord\Code Cache\*.*") do rmdir "%%p" /s /q
-for /d %%p in ("C:\Users\metak\AppData\Roaming\Discord\GPUCache\*.*") do rmdir "%%p" /s /q
+for /d %%p in ("C:\Users\%username%\AppData\Roaming\Discord\Cache\*.*") do rmdir "%%p" /s /q
+for /d %%p in ("C:\Users\%username%\AppData\Roaming\Discord\Code Cache\*.*") do rmdir "%%p" /s /q
+for /d %%p in ("C:\Users\%username%\AppData\Roaming\Discord\GPUCache\*.*") do rmdir "%%p" /s /q
 
 echo Deleted Discord cache
 
@@ -98,8 +98,8 @@ If /I "%Input%"=="y" goto spotifyyes
 goto spotifyno
 
 :spotifyyes
-del /s /q "C:\Users\metak\AppData\Local\Spotify\Data"
-for /d %%p in ("C:\Users\metak\AppData\Local\Spotify\Data") do rmdir "%%p" /s /q
+del /s /q "C:\Users\%username%\AppData\Local\Spotify\Data"
+for /d %%p in ("C:\Users\%username%\AppData\Local\Spotify\Data") do rmdir "%%p" /s /q
 
 echo Deleted Spotify cache
 echo .
