@@ -18,6 +18,7 @@ del /s /q "C:\Windows\Prefetch\*.*"
 for /d %%p in ("C:\Windows\Prefetch\*.*") do rmdir "%%p" /s /q
 
 cd "C:\Windows\system32\"
+cleanmgr.exe
 WSReset.exe
 
 ipconfig /flushdns
