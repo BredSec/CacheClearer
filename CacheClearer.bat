@@ -33,9 +33,9 @@ If /I "%Input%"=="y" goto windowsoldyes
 goto windowsoldno
 
 :windowsoldyes
-if not exist "C:\windows.old" goto nowinold
-del /s /q "C:\windows.old\*.*"
-for /d %%p in ("C:\windows.old\*.*") do rmdir "%%p" /s /q
+if not exist "C:\Windows.old" goto nowinold
+del /s /q "C:\Windows.old\*.*"
+for /d %%p in ("C:\Windows.old\*.*") do rmdir "%%p" /s /q
 
 echo Old Windows update folder deleted
 
