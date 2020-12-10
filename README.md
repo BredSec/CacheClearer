@@ -3,7 +3,8 @@ A simple and easy to use tool that can clear your Windows 10 cache and help spee
 
 
 # HOW TO USE
-DON'T RUN CACHECLEARER.BAT IN ADMINISTRATOR MODE, IT MIGHT DELETE FILES AND FOLDERS THAT SHOULDNT BE TOUCHED
+EXIT OUT OF ALL PROGRAMS YOU ARE USING BEFORE RUNNING THIS AS CLEARCACHER MIGHT INTERFERE
+RUN CACHECLEARER.BAT IN ADMINISTRATOR MODE SO IT HAS ACCESS TO THE NEEDED FILES AND FOLDERS
 
 
 CacheClearer will ask if you want to delete all of Window's "normal cache". Answering yes to this will delete the contents of "C:\Users\USERNAME\AppData\Local\Temp\", "C:\Windows\Temp\", "C:\Windows\SoftwareDistribution\Download\", and "C:\Windows\Prefetch\".
