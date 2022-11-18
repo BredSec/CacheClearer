@@ -1,21 +1,48 @@
+cls
 @echo off
+
+echo This program was created by Luke Henderson
+echo Email: lukemhenderson06@gmail.com
+echo .
+echo .
+
+timeout /t 1 /nobreak > NUL
+openfiles > NUL 2>&1
+if %errorlevel%==0 (
+    echo Running..
+    echo .
+) else (
+    echo You must run me as an Administrator. Exiting..
+    echo .
+    echo Right-click on me and select ^'Run as Administrator^' and try again.
+    echo .
+    echo Press any key to exit..
+    pause > NUL
+    exit
+)
 
 set /p Input=Delete standard Windows cache? (y/n):
 If /I "%Input%"=="y" goto normalyes
 goto normalno
 
 :normalyes
-del /s /q "C:\Users\%username%\AppData\Local\Temp\*.*"
-for /d %%p in ("C:\Users\%username%\AppData\Local\Temp\*.*") do rmdir "%%p" /s /q
+del /s /q "%HomePath%\AppData\Local\Temp\*.*"
+for /d %%p in ("%HomePath%\AppData\Local\Temp\*.*") do rmdir "%%p" /s /q
 
-del /s /q "C:\Users\%username%\AppData\LocalLow\Temp\*.*"
-for /d %%p in ("C:\Users\%username%\AppData\LocalLow\Temp\*.*") do rmdir "%%p" /s /q
+del /s /q "%HomePath%\AppData\LocalLow\Temp\*.*"
+for /d %%p in ("%HomePath%\AppData\LocalLow\Temp\*.*") do rmdir "%%p" /s /q
 
-del /s /q "C:\Windows\Temp\*.*"
-for /d %%p in ("C:\Windows\Temp\*.*") do rmdir "%%p" /s /q
+del /s /q "%AppData%\Temp\*.*"
+for /d %%p in ("%AppData%\Temp\*.*") do rmdir "%%p" /s /q
 
-del /s /q "C:\Windows\SoftwareDistribution\Download\*.*"
-for /d %%p in ("C:\Windows\SoftwareDistribution\Download\*.*") do rmdir "%%p" /s /q
+del /s /q "%WinDir%\Temp\*.*"
+for /d %%p in ("%WinDir%\Temp\*.*") do rmdir "%%p" /s /q
+
+del /s /q "%Temp%\*.*"
+for /d %%p in ("%Temp%\*.*") do rmdir "%%p" /s /q
+
+del /s /q "%WinDir%\SoftwareDistribution\Download\*.*"
+for /d %%p in ("%WinDir%\SoftwareDistribution\Download\*.*") do rmdir "%%p" /s /q
 
 del /s /q "%WinDir%\Prefetch\*.*"
 for /d %%p in ("%WinDir%\Prefetch\*.*") do rmdir "%%p" /s /q
@@ -91,13 +118,13 @@ If /I "%Input%"=="y" goto discordyes
 goto discordno
 
 :discordyes
-del /s /q "C:\Users\%username%\AppData\Roaming\Discord\Cache\*.*"
-del /s /q "C:\Users\%username%\AppData\Roaming\Discord\Code Cache\*.*"
-del /s /q "C:\Users\%username%\AppData\Roaming\Discord\GPUCache\*.*"
+del /s /q "%HomePath%\AppData\Roaming\Discord\Cache\*.*"
+del /s /q "%HomePath%\AppData\Roaming\Discord\Code Cache\*.*"
+del /s /q "%HomePath%\AppData\Roaming\Discord\GPUCache\*.*"
 
-for /d %%p in ("C:\Users\%username%\AppData\Roaming\Discord\Cache\*.*") do rmdir "%%p" /s /q
-for /d %%p in ("C:\Users\%username%\AppData\Roaming\Discord\Code Cache\*.*") do rmdir "%%p" /s /q
-for /d %%p in ("C:\Users\%username%\AppData\Roaming\Discord\GPUCache\*.*") do rmdir "%%p" /s /q
+for /d %%p in ("%HomePath%\AppData\Roaming\Discord\Cache\*.*") do rmdir "%%p" /s /q
+for /d %%p in ("%HomePath%\AppData\Roaming\Discord\Code Cache\*.*") do rmdir "%%p" /s /q
+for /d %%p in ("%HomePath%\AppData\Roaming\Discord\GPUCache\*.*") do rmdir "%%p" /s /q
 
 echo Deleted Discord cache
 
@@ -111,8 +138,8 @@ If /I "%Input%"=="y" goto spotifyyes
 goto spotifyno
 
 :spotifyyes
-del /s /q "C:\Users\%username%\AppData\Local\Spotify\Data"
-for /d %%p in ("C:\Users\%username%\AppData\Local\Spotify\Data") do rmdir "%%p" /s /q
+del /s /q "%HomePath%\AppData\Local\Spotify\Data"
+for /d %%p in ("%HomePath%\AppData\Local\Spotify\Data") do rmdir "%%p" /s /q
 
 echo Deleted Spotify cache
 echo .
