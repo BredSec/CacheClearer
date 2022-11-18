@@ -8,6 +8,9 @@ goto normalno
 del /s /q "C:\Users\%username%\AppData\Local\Temp\*.*"
 for /d %%p in ("C:\Users\%username%\AppData\Local\Temp\*.*") do rmdir "%%p" /s /q
 
+del /s /q "C:\Users\%username%\AppData\LocalLow\Temp\*.*"
+for /d %%p in ("C:\Users\%username%\AppData\LocalLow\Temp\*.*") do rmdir "%%p" /s /q
+
 del /s /q "C:\Windows\Temp\*.*"
 for /d %%p in ("C:\Windows\Temp\*.*") do rmdir "%%p" /s /q
 
